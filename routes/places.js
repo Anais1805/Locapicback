@@ -32,7 +32,7 @@ router.get('/:nickname', (req, res) => {
     .then(dbData => {
         console.log(dbData)
         if(dbData === null ){
-            res.json({result: true, error :'User not found or no places registered'})
+            res.json({result: true, error :'User not found or no place registered'})
         } else {
             res.json({result: true, places: dbData})
         }
