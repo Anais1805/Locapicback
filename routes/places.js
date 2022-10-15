@@ -32,7 +32,7 @@ router.get('/:nickname', (req, res) => {
     .then(dbData => {
         console.log(dbData)
         if(dbData === null ){
-            res.json({result: true, places :'User not found or no places registered'})
+            res.json({result: true, error :'User not found or no places registered'})
         } else {
             res.json({result: true, places: dbData})
         }
@@ -40,7 +40,7 @@ router.get('/:nickname', (req, res) => {
 })
 
 //DELETE /places : suppression d’un marqueur à partir de son nom et
-// du surnom de l’utilisateur (via req.body)
+// du surnom de l’utilisateur (via req.body
 
 router.delete('/', (req, res) => {
     Place.deleteOne({name: req.body.name, nickname: req.body.nickname}).then(dbData => {
